@@ -6,6 +6,23 @@
             max-width: 500px;
             margin: auto;
         }
+
+        table{
+            border-collapse: collapse;
+            width: 150%;
+        }
+        td, th{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:hover {background-color: #ddd;}
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+
     </style>
 </head>
 
