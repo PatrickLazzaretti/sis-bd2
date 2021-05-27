@@ -1,5 +1,3 @@
-#docker-compose up
-
 php:
     build: .
     ports:
@@ -19,5 +17,12 @@ db:
         - MYSQL_DATABASE=db_app_db2
         - MYSQL_ROOT_PASSWORD=123456
 
-#docker exec -it app_bd2_db_1  mysql --user=root --password=123456
-#select host, user from mysql.user;
+# Backup:
+# docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+
+# docker exec sis-bd2_db_1 /usr/bin/mysqldump -u root --password=123456 db_app_db2 > scripts/dump.sql
+
+# Restaurar
+# cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+
+# cat dump.sql | docker exec -i sis-bd2_db_1 /usr/bin/mysql -u root --password=123456 db_app_db2
